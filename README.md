@@ -1,19 +1,22 @@
-# Norwegian Exam Accommodation AI Agent
+# tilrettelegging-bot
 
-AI-powered system that analyzes medical documentation to recommend appropriate exam accommodations for Norwegian university students.
+AI system for analyzing Norwegian medical documentation and recommending exam accommodations for university students.
 
-## Features
+## Overview
 
-- Document processing for PDF, JPG, PNG, and HEIC files
-- Azure OpenAI powered analysis with local OCR fallback
-- GDPR-oriented temporary processing and automatic deletion
-- OAuth-protected API for university integrations
-- Traffic light compliance protocol for human review flows
+Parses Norwegian medical records, identifies relevant diagnoses and functional limitations, maps them to standard accommodation categories (extended time, oral exam, separate room, etc.), and produces a structured recommendation report.
 
-## Quick Start
+## How it works
 
-```bash
-npm install
-copy .env.example .env
-npm start
-```
+1. Upload Norwegian medical documentation
+2. The system extracts diagnoses and functional impact
+3. Recommendations are generated based on university accommodation standards
+4. A structured report is returned for review by the coordinator
+
+## Tech
+
+JavaScript · NLP · Norwegian language processing
+
+## Background
+
+University students with documented disabilities are entitled to exam accommodations in Norway. Manual assessment of applications is slow and inconsistent. This system assists coordinators by providing evidence-based AI recommendations.
