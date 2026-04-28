@@ -1,0 +1,24 @@
+openapi: 3.1.0
+info:
+  title: Exam Accommodation AI API
+  version: 1.0.0
+  description: API for uploading medical documentation and receiving accommodation recommendations.
+paths:
+  /api/health:
+    get:
+      summary: Health check
+      responses:
+        '200':
+          description: Service is healthy
+  /v1/auth/token:
+    post:
+      summary: Exchange university API key for JWT
+      responses:
+        '200':
+          description: Access token issued
+  /v1/analyze:
+    post:
+      summary: Submit documents for analysis
+      responses:
+        '200':
+          description: Job accepted

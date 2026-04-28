@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilrettelegging Bot – Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page">
+        <header class="hero">
+            <div>
+                <p class="eyebrow">Demo • Black Box API</p>
+                <h1>Last opp PDF og få tilretteleggingsforslag</h1>
+                <p class="lead">Minimal demo-UI. Den virkelige verdien ligger i API/Black Box – dette grensesnittet er kun for visning.</p>
+            </div>
+            <div class="token-box">
+                <label for="tokenInput">Bearer token (valgfritt for demo)</label>
+                <input id="tokenInput" placeholder="Past inn JWT for /v1/analyze, ellers brukes /api/analyze" />
+            </div>
+        </header>
+        <main class="content">
+            <section class="upload-card">
+                <div class="dropzone" id="dropzone">
+                    <p class="icon">📄</p>
+                    <p class="title">Slipp PDF her eller klikk for å velge</p>
+                    <p class="hint">PDF, JPG, PNG, HEIC • maks 10 MB • opptil 5 filer</p>
+                    <input id="fileInput" type="file" accept=".pdf,.jpg,.jpeg,.png,.heic" multiple hidden />
+                    <button id="pickBtn" class="btn primary">Velg filer</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+services:
+  app:
+    build: .
+    platform: linux/amd64
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./vault-storage:/app/vault-storage
+      - ./.env:/app/.env
+    environment:
+      - NODE_ENV=production
+      - CLAMAV_HOST=clamav
+      - CLAMAV_PORT=3310
+      - REDIS_URL=redis://redis:6379
+    depends_on:
+      - clamav
+      - redis
+    restart: unless-stopped
+
+  clamav:
+    image: clamav/clamav:latest
+    platform: linux/amd64
+    ports:
+      - "3310:3310"
+    volumes:
+      - clamav-data:/var/lib/clamav
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    platform: linux/amd64
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    restart: unless-stopped
+
+volumes:
+  clamav-data:
+  redis-data:
